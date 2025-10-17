@@ -25,7 +25,6 @@ Harman_PQRS/
 ├── CMakeLists.txt
 ├── Constants.hpp
 ├── Logger.hpp
-├── Makefile
 ├── README.md
 ├── include
 │   └── VideoProcessor.hpp
@@ -37,59 +36,83 @@ Harman_PQRS/
 ```
 
 # Build Requirements
-🐧 Linux / macOS
-```
-CMake ≥ 3.10
 
-OpenCV ≥ 4.0
+**Requirements:**
+- CMake ≥ 3.10
+- OpenCV ≥ 4.0
+- C++ compiler (GCC, Clang, MSVC, or MinGW)
 
-C++ compiler
+## Install Dependencies
 
-Install dependencies:
+### 🐧 Linux
 
-Ubuntu/Debian:
-
+**Ubuntu/Debian:**
+```bash
 sudo apt update
 sudo apt install -y cmake build-essential libopencv-dev
+```
 
-macOS (Homebrew):
+**Fedora/RHEL/CentOS:**
+```bash
+sudo dnf install cmake gcc-c++ opencv-devel
+```
 
+**Arch Linux:**
+```bash
+sudo pacman -S cmake gcc opencv
+```
+
+### 🍎 macOS
+
+**Homebrew:**
+```bash
 brew install cmake opencv
-
 ```
 
-🪟 Windows
-```
-CMake
+### 🪟 Windows
 
-OpenCV for Windows
-
-In Git Bash / MSYS2 you can use make directly.
-If using MinGW, run mingw32-make instead.
-```
+1. Install [CMake](https://cmake.org/download/)
+2. Download [OpenCV for Windows](https://opencv.org/releases/)
+3. Extract and set `OpenCV_DIR` environment variable to `<opencv_path>/build`
 
 # Build Instructions
 
-Build (automatic with Makefile)
+**Build:**
+```bash
+mkdir -p build
+cd build
+cmake ..
+cmake --build .
+```
 
-`make`
-
-The compiled binary will appear in:
-
-`build/video_processor_cpp`
-
-Remove the build directory and binaries:
-
-`make clean`
-
-Rebuild (Clean + Build)
-
-`make rebuild`
+**Clean:**
+```bash
+rm -rf build
+```
 
 # ▶️ Run the Program
 
-`./build/video_processor_cpp`
+**Linux/macOS:**
+```bash
+./video_processor_cpp
+```
 
+**Windows:**
+```bash
+video_processor_cpp.exe
+```
+
+# 🧪 Run Tests
+
+**Linux/macOS:**
+```bash
+./TestsVideoProcessor
+```
+
+**Windows:**
+```bash
+TestsVideoProcessor.exe
+```
 
 # Key Action controls:
 
